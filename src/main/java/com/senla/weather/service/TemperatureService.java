@@ -2,7 +2,7 @@ package com.senla.weather.service;
 
 import com.senla.weather.entity.AverageTemperature;
 import com.senla.weather.entity.Interval;
-import com.senla.weather.exception.TemperatureException;
+import com.senla.weather.exception.ValidationException;
 import com.senla.weather.repository.AverageTemperatureRepository;
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Data
@@ -24,10 +23,10 @@ public class TemperatureService {
 
     private final AverageTemperatureRepository averageTemperatureRepository;
 
-    public List<AverageTemperature> findAllInBetween(LocalDate from, LocalDate to) throws TemperatureException {
+    public List<AverageTemperature> findAllInBetween(LocalDate from, LocalDate to) throws ValidationException {
         if (from.toString().compareTo(to.toString()) > 0) {
             log.info("incorrect input date");
-            throw new TemperatureException("end date is less than start date");
+            throw new ValidationException();
         }
         List<AverageTemperature> averageTemperatures = averageTemperatureRepository.
                 findByDateBetween(from, to);
@@ -45,7 +44,7 @@ public class TemperatureService {
         try {
             log.info("searching for dates in the interval");
             temperatures = findAllInBetween(interval.getFrom(), interval.getTo());
-        } catch (TemperatureException e) {
+        } catch (ValidationException e) {
             return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
         if (temperatures != null && temperatures.size() > 0) {

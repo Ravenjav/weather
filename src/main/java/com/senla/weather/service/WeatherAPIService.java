@@ -32,12 +32,12 @@ class WeatherAPIService {
         try {
             response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         } catch (Exception e) {
-            throw new OutsideApiException("runtime error");
+            throw new OutsideApiException();
         }
         try {
             weather = objectMapper.readValue(response.body(), Weather.class);
         } catch (JsonProcessingException e) {
-            throw new OutsideApiException("json exception");
+            throw new OutsideApiException();
         }
         return weather;
     }
