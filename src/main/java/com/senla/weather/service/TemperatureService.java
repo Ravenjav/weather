@@ -46,13 +46,13 @@ public class TemperatureService {
             log.info("searching for dates in the interval");
             temperatures = findAllInBetween(interval.getFrom(), interval.getTo());
         } catch (TemperatureException e) {
-            return new ResponseEntity<String>(e.getMessage(), HttpStatus.OK);
+            return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
         if (temperatures != null && temperatures.size() > 0) {
             log.info("successful dates return");
             return new ResponseEntity<>(temperatures, HttpStatus.OK);
         }
         log.error("no dates in this interval");
-        return new ResponseEntity<>("no info about these dates", HttpStatus.OK);
+        return new ResponseEntity<>("no info about these dates", HttpStatus.NOT_FOUND);
     }
 }
