@@ -30,7 +30,7 @@ public class AsinAppService {
 
     private static final int TIME = 60;
 
-    @Scheduled(fixedRate = TIME, timeUnit = TimeUnit.SECONDS)
+    @Scheduled(fixedRate = TIME, timeUnit = TimeUnit.MINUTES)
     @CacheEvict(value = "currentWeatherCache", key = "'staticKey'")
     void takeNewWeather() {
         Weather currentWeather = null;
