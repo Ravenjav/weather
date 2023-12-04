@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet logicalFilePath="db/changelog/v.1.0.0/insert-weather.xml"
+               id="insert-weather.xml" author="i.s">
+        <insert tableName="weather">
+            <column name="id" value="1"/>
+            <column name="condition" value="Light snow"/>
+            <column name="location" value="Minsk"/>
+            <column name="temperature" value="-6"/>
+            <column name="wind_speed" value="11.9"/>
+            <column name="pressure" value="1008"/>
+            <column name="humidity" value="93"/>
+            <column name="date" value="2023-12-03"/>
+        </insert>
+        <insert tableName="weather">
+            <column name="id" value="2"/>
+            <column name="condition" value="Partly cloudy"/>
+            <column name="location" value="Minsk"/>
+            <column name="temperature" value="-6"/>
+            <column name="wind_speed" value="9.4"/>
+            <column name="pressure" value="1012"/>
+            <column name="humidity" value="93"/>
+            <column name="date" value="2023-12-03"/>
+        </insert>
+        <insert tableName="weather">
+            <column name="id" value="3"/>
+            <column name="condition" value="Partly cloudy"/>
+            <column name="location" value="Minsk"/>
+            <column name="temperature" value="-6"/>
+            <column name="wind_speed" value="16.1"/>
+            <column name="pressure" value="1012"/>
+            <column name="humidity" value="86"/>
+            <column name="date" value="2023-12-03"/>
+        </insert>
+        <insert tableName="weather">
+            <column name="id" value="4"/>
+            <column name="condition" value="Light snow"/>
+            <column name="location" value="Minsk"/>
+            <column name="temperature" value="-7"/>
+            <column name="wind_speed" value="11.9"/>
+            <column name="pressure" value="1013"/>
+            <column name="humidity" value="93"/>
+            <column name="date" value="2023-12-04"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

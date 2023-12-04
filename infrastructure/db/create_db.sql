@@ -1,0 +1,1 @@
+create database weather_db;

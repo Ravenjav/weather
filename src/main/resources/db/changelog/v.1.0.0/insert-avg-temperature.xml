@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet logicalFilePath="db/changelog/v.1.0.0/insert-avg-temperature.xml"
+               id="insert-avg-temperature.xml" author="i.s">
+        <insert tableName="average_temperature">
+            <column name="date" value="2023-12-02"/>
+            <column name="temperature" value="-5"/>
+        </insert>
+        <insert tableName="average_temperature">
+            <column name="date" value="2023-12-01"/>
+            <column name="temperature" value="-4.5"/>
+        </insert>
+        <insert tableName="average_temperature">
+            <column name="date" value="2023-11-30"/>
+            <column name="temperature" value="-6.3"/>
+        </insert>
+        <insert tableName="average_temperature">
+            <column name="date" value="2023-11-28"/>
+            <column name="temperature" value="-5.8"/>
+        </insert>
+        <insert tableName="average_temperature">
+            <column name="date" value="2023-11-25"/>
+            <column name="temperature" value="-4.7"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
