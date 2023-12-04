@@ -7,7 +7,6 @@
     <changeSet logicalFilePath="db/changelog/v.1.0.0/insert-weather.xml"
                id="insert-weather.xml" author="i.s">
         <insert tableName="weather">
-            <column name="id" value="1"/>
             <column name="condition" value="Light snow"/>
             <column name="location" value="Minsk"/>
             <column name="temperature" value="-6"/>
@@ -17,7 +16,6 @@
             <column name="date" value="2023-12-03"/>
         </insert>
         <insert tableName="weather">
-            <column name="id" value="2"/>
             <column name="condition" value="Partly cloudy"/>
             <column name="location" value="Minsk"/>
             <column name="temperature" value="-6"/>
@@ -27,8 +25,7 @@
             <column name="date" value="2023-12-03"/>
         </insert>
         <insert tableName="weather">
-            <column name="id" value="3"/>
-            <column name="condition" value="Partly cloudy"/>
+            <column name="condition" value="Partly cloudly"/>
             <column name="location" value="Minsk"/>
             <column name="temperature" value="-6"/>
             <column name="wind_speed" value="16.1"/>
@@ -37,7 +34,6 @@
             <column name="date" value="2023-12-03"/>
         </insert>
         <insert tableName="weather">
-            <column name="id" value="4"/>
             <column name="condition" value="Light snow"/>
             <column name="location" value="Minsk"/>
             <column name="temperature" value="-7"/>

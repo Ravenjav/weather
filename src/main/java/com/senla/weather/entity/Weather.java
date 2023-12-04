@@ -18,7 +18,7 @@ import java.util.Map;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
-@Table(name = "weather", schema = "weather")
+@Table(name = "weather")
 public class Weather {
 
     @Id

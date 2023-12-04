@@ -7,7 +7,7 @@
     <changeSet logicalFilePath="db/changelog/v.1.0.0/create-table-weather.xml"
                id="create-table-weather" author="i.s">
         <createTable tableName="weather">
-            <column name="id" type="bigint">
+            <column name="id" type="bigserial">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="condition" type="text">

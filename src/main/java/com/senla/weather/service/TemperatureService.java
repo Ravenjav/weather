@@ -31,10 +31,6 @@ public class TemperatureService {
         }
         List<AverageTemperature> averageTemperatures = averageTemperatureRepository.
                 findByDateBetween(from, to);
-        Optional<AverageTemperature> leftTemperature = averageTemperatureRepository.findById(from);
-        leftTemperature.ifPresent(averageTemperatures::add);
-        Optional<AverageTemperature> rightTemperature = averageTemperatureRepository.findById(to);
-        rightTemperature.ifPresent(averageTemperatures::add);
         return averageTemperatures;
     }
 
