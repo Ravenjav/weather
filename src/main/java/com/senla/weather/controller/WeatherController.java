@@ -24,7 +24,7 @@ public class WeatherController {
     @PostMapping(value = "/takeAvgTemperature",
             consumes = {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<?> take(@RequestBody Interval interval) {
+    public ResponseEntity<?> takeAvgTemperature(@RequestBody Interval interval) {
         return temperatureService.getAvgTemperature(interval);
     }
 }
